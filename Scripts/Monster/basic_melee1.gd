@@ -83,4 +83,6 @@ func _fixed_process(delta):
 		get_node("Label").set_text("DEAD")
 		get_node("CollisionShape2D").free()
 		set_fixed_process(false)
-		#free()
+		for i in get_parent().get_children():
+			if(i.is_in_group("Player_group")):
+				i.set("experience_current",i.get("experience_current")+10)

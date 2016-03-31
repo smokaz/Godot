@@ -29,7 +29,7 @@ func _ready():
 	# Initialization here
 	#initalize player inventory
 	init_playerinventory()
-	
+	add_to_group("Player_group")
 	#initalize animation
 	animnode = get_node("Player_Sprite/Player_AnimationPlayer")
 	animnode.set_current_animation("idle_down")
@@ -60,6 +60,7 @@ func deal_damage_to(var enemy):
 	enemy.set("health",enemy.get("health")-current_weapon.damage)
 # PROCESS 
 func _fixed_process(delta):
+	get_node("Exp_bar").set_value(100*experience_current/experience_tolevel)
 	# GET PLAYER INPUT
 	down = Input.is_action_pressed("move_down")
 	up = Input.is_action_pressed("move_up")
