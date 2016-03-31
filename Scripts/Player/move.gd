@@ -97,7 +97,8 @@ func _fixed_process(delta):
 		Globals.set("player_is_attacking",true)
 		var aoe = Area2D.new()
 		aoe.set_enable_monitoring(true)
-		aoe.set_collision_mask(0)
+		aoe.set_
+		print(aoe.get_collision_mask())
 		aoe.scale(Vector2(3.0,3.0))
 		print(aoe)
 		var bodies = aoe.get_overlapping_bodies()
