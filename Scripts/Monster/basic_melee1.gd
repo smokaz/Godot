@@ -81,5 +81,6 @@ func _fixed_process(delta):
 	# Collison
 	if(health<=0):
 		get_node("Label").set_text("DEAD")
+		get_node("CollisionShape2D").free()
 		set_fixed_process(false)
 		#free()

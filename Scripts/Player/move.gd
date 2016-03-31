@@ -56,7 +56,8 @@ func init_playerinventory():
 	sword.damage = 25
 	current_weapon = sword
 	
-
+func deal_damage_to(var enemy):
+	enemy.set("health",enemy.get("health")-current_weapon.damage)
 # PROCESS 
 func _fixed_process(delta):
 	# GET PLAYER INPUT
