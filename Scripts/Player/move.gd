@@ -95,17 +95,11 @@ func _fixed_process(delta):
 	if(attack and weapontimer>= current_weapon.delay ):
 		weapontimer = 0
 		Globals.set("player_is_attacking",true)
-		var aoe = Area2D.new()
-		aoe.set_enable_monitoring(true)
-		aoe.set_
-		print(aoe.get_collision_mask())
-		aoe.scale(Vector2(3.0,3.0))
-		print(aoe)
-		var bodies = aoe.get_overlapping_bodies()
-		for i in bodies:
-			print(i)
-			i.set("health",0)
-		aoe.free()
+		var slash = load("res://effects.scn")
+		var slashi = slash.instance()
+		get_parent().add_child(slashi)
+		#slashi.set_pos(Vector2(get_pos()))
+		print(slashi)
 	else:
 		Globals.set("player_is_attacking",false)
 	weapontimer+=delta
