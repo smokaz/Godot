@@ -97,6 +97,7 @@ func _fixed_process(delta):
 		Globals.set("player_is_attacking",true)
 		var aoe = Area2D.new()
 		aoe.set_enable_monitoring(true)
+		aoe.set_
 		print(aoe.get_collision_mask())
 		aoe.scale(Vector2(3.0,3.0))
 		print(aoe)
