@@ -91,14 +91,14 @@ func _fixed_process(delta):
 			animnode.set_current_animation("walk_left")
 	if(!animnode.is_playing()):
 		animnode.play(animnode.get_current_animation())
-	#ATTACK TEST
+	#ATTACK TEST - need to figure out how to load only one specific node
 	if(attack and weapontimer>= current_weapon.delay ):
 		weapontimer = 0
 		Globals.set("player_is_attacking",true)
 		var slash = load("res://effects.scn")
 		var slashi = slash.instance()
-		get_parent().add_child(slashi)
-		#slashi.set_pos(Vector2(get_pos()))
+		get_parent().get_child(self.get_index()).add_child(slashi)
+		slashi.get_child(0).set_pos(Vector2(get_pos()))
 		print(slashi)
 	else:
 		Globals.set("player_is_attacking",false)
