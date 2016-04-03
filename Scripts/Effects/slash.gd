@@ -23,5 +23,3 @@ func _fixed_process(delta): #get_parent 2 ganger fordi vi vil ha kinematic body
 				array_already_dealt_damage.append(i)
 	if(!get_node("Sprite/AnimationPlayer").is_playing()):
 		get_parent().free()
-
-
